@@ -42,7 +42,7 @@
     "typescript": "^4.9.4"
   },
   "private": true,
-  "main": "index.js",
-  "author": "Kevin Neema Brian <kevinbrian@cortex-moz.com>",
+  "main": "index.ts",
+  "author": "Kevin Neema Brian, Ismael Bemat",
   "license": "MIT"
 }
