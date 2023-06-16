@@ -16,3 +16,6 @@ Clone the Community Alert app repository from GitHub using the following command
 ```bash
 git clone <repository-url>
 ```
+
+
+Find Team Conventions in Team Notes.md page in the root file
