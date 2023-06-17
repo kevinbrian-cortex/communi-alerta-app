@@ -1,8 +1,7 @@
-import { Box, NativeBaseProvider, Text, View } from "native-base";
-import Home from ".";
+import { View, Box, Text } from "native-base";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-export default function Layout() {
+const Login = () => {
   const insets = useSafeAreaInsets();
   return (
     <View
@@ -13,9 +12,11 @@ export default function Layout() {
         paddingRight: insets.right,
       }}
     >
-      <Text>Layout</Text>
-      <Home />
-      <Text>Tabs</Text>
+      <Box>
+        <Text color={"amber.100"}>Login Page</Text>
+      </Box>
     </View>
   );
-}
+};
+
+export default Login;
