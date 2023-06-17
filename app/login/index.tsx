@@ -7,12 +7,16 @@ import {
   FormControl,
   Button,
   VStack,
+  Link,
+  HStack,
 } from "native-base";
 import { Image, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 
 const Login = () => {
   const insets = useSafeAreaInsets();
+  const router = useRouter();
 
   return (
     <Center
@@ -54,7 +58,16 @@ const Login = () => {
             Entrar
           </Button>
           <Center mt="2">
-            <Text>Nao tem uma conta? Cadastre-se</Text>
+            <Text>
+              Nao tem uma conta?{" "}
+              <Link
+                onPress={() => {
+                  router.push("/register");
+                }}
+              >
+                Cadastre-se
+              </Link>
+            </Text>
           </Center>
         </VStack>
       </Container>
