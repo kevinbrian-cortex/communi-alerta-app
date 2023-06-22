@@ -1,12 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import {
-    Box,
-    HStack,
-    Icon,
-    IconButton,
-    Text,
-    VStack
-} from "native-base";
+import { Box, HStack, Icon, IconButton, Text, VStack } from "native-base";
 import React from "react";
 
 const cardData = [

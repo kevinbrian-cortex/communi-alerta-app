@@ -32,7 +32,7 @@ export default function () {
         w="full"
         p={5}
         pb={20}
-        borderBottomRadius={50}
+        borderBottomRadius={20}
       >
         <Heading textAlign={"center"} color={"white"}>
           Juntos por uma comunidade segurade violencia
