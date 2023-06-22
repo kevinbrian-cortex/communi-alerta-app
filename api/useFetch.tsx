@@ -8,7 +8,7 @@ import axios from "axios";
 const useFetch = async () => {
   const response = await axios({
     method: "GET",
-    url: "https://jsonplaceholder.typicode.com/photos",
+    url: "https://picsum.photos/v2/list",
   });
 
   return response.data;
