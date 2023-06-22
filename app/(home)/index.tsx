@@ -11,6 +11,8 @@ import {
   Text,
 } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
+import Appbar from "../../components/appbar";
+import MenuCards from "../../components/menu-cards";
 
 export default function () {
   const router = useRouter();
@@ -18,34 +20,9 @@ export default function () {
     <Box
       width={"full"}
       height={"full"}
-      borderColor={"red.100"}
-      borderStyle={"dotted"}
-      borderWidth={1}
     >
       {/* Top bar */}
-      <HStack
-        bg="blue.500"
-        justifyContent="space-between"
-        alignItems="center"
-        w="full"
-      >
-        <HStack>
-          <Box p={3}>
-            <Image
-              source={require("../../assets/images/logo.png")}
-              w={10}
-              h={10}
-              alt="Logo"
-            />
-          </Box>
-        </HStack>
-
-        <HStack alignItems="center">
-          <IconButton
-            icon={<Icon size="xl" as={Ionicons} name="menu" color="white" />}
-          />
-        </HStack>
-      </HStack>
+      <Appbar />
 
       {/* Header */}
       <HStack
@@ -54,13 +31,16 @@ export default function () {
         alignItems="center"
         w="full"
         p={5}
+        pb={20}
+        borderBottomRadius={20}
       >
         <Heading textAlign={"center"} color={"white"}>
-          Juntos por uma comunidade segura
+          Juntos por uma comunidade segurade violencia
         </Heading>
       </HStack>
 
-
+      {/* menu card */}
+      <MenuCards />
     </Box>
   );
 }
