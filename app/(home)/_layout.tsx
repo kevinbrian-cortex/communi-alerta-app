@@ -11,9 +11,9 @@ export default function Layout() {
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
+        borderWidth: 1,
       }}
     >
-      <Text>Layout</Text>
       <Home />
       <Text>Tabs</Text>
     </View>
