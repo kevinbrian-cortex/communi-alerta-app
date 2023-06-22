@@ -13,14 +13,12 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import Appbar from "../../components/appbar";
 import MenuCards from "../../components/menu-cards";
+import SwiperComponent from "../../components/swiper-component";
 
 export default function () {
   const router = useRouter();
   return (
-    <Box
-      width={"full"}
-      height={"full"}
-    >
+    <Box width={"full"} height={"full"}>
       {/* Top bar */}
       <Appbar />
 
@@ -41,6 +39,9 @@ export default function () {
 
       {/* menu card */}
       <MenuCards />
+
+      {/* swiper component */}
+      <SwiperComponent />
     </Box>
   );
 }
