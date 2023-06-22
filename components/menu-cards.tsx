@@ -44,7 +44,7 @@ const CartItem = (props: {
       p={2}
       bgColor={"white"}
     >
-      <VStack justifyContent={"space-between"} space={2}>
+      <VStack justifyContent={"space-between"} space={2} alignItems={"center"}>
         <IconButton
           icon={
             <Icon
@@ -60,7 +60,7 @@ const CartItem = (props: {
           maxW="200"
           w="80%"
           textAlign={"center"}
-          fontSize={"lg"}
+          fontSize={"md"}
           noOfLines={2}
           bold={true}
         >
