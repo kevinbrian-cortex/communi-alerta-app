@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { Box, HStack, Heading } from "native-base";
+import { Box, HStack, Heading, ScrollView } from "native-base";
 import { useQuery } from "react-query";
 import useFetch from "../../api/useFetch";
 import Appbar from "../../components/appbar";
@@ -36,8 +36,11 @@ export default function () {
       {/* menu card */}
       <MenuCards />
 
-      {/* swiper component */}
-      <SwiperComponent data={data} title="Educação" />
+      {/* swiper components view with a scroll view */}
+      <ScrollView>
+        <SwiperComponent data={data} title="Educação" />
+        <SwiperComponent data={data} title="Podcasts motivacionais" />
+      </ScrollView>
     </Box>
   );
 }

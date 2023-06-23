@@ -1,10 +1,6 @@
 import { Box, HStack, Heading, Image, Link } from "native-base";
 import React from "react";
-import { Text } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Swiper from "react-native-swiper";
-import { useQuery } from "react-query";
-import useFetch from "../api/useFetch";
 
 export default function SwiperComponent(props: { data: any; title: string }) {
   //destructuring
@@ -12,7 +8,7 @@ export default function SwiperComponent(props: { data: any; title: string }) {
   return (
     <Box h={300} w={"full"}>
       <HStack alignItems={"center"} justifyContent={"space-between"} px={2}>
-        <Heading>Educação</Heading>
+        <Heading>{props.title}</Heading>
 
         <Link color={"red.500"} tintColor={"red.600"}>
           veja mais
@@ -36,6 +32,8 @@ export default function SwiperComponent(props: { data: any; title: string }) {
   );
 }
 
+
+//Swiper item component
 const SwiperItem = (props: { item: any }) => {
   return (
     <Box p={2}>
