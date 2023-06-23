@@ -1,22 +1,18 @@
 import { useRouter } from "expo-router";
-import {
-  Box,
-  Button,
-  Container,
-  HStack,
-  Heading,
-  Icon,
-  IconButton,
-  Image,
-  Text,
-} from "native-base";
-import { Ionicons } from "@expo/vector-icons";
+import { Box, HStack, Heading, ScrollView } from "native-base";
+import { useQuery } from "react-query";
+import useFetch from "../../api/useFetch";
 import Appbar from "../../components/appbar";
 import MenuCards from "../../components/menu-cards";
 import SwiperComponent from "../../components/swiper-component";
 
 export default function () {
-  const router = useRouter();
+  //fetch data using useFetch
+  const data = useQuery({
+    queryKey: "posts",
+    queryFn: () => useFetch("https://picsum.photos/v2/list"),
+  });
+
   return (
     <Box width={"full"} height={"full"}>
       {/* Top bar */}
@@ -40,8 +36,11 @@ export default function () {
       {/* menu card */}
       <MenuCards />
 
-      {/* swiper component */}
-      <SwiperComponent />
+      {/* swiper components view with a scroll view */}
+      <ScrollView>
+        <SwiperComponent data={data} title="Educação" />
+        <SwiperComponent data={data} title="Podcasts motivacionais" />
+      </ScrollView>
     </Box>
   );
 }

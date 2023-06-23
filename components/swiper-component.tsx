@@ -1,25 +1,14 @@
 import { Box, HStack, Heading, Image, Link } from "native-base";
 import React from "react";
-import { Text } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Swiper from "react-native-swiper";
-import { useQuery } from "react-query";
-import useFetch from "../api/useFetch";
 
-export default function SwiperComponent() {
-  //fetch data using useFetch
-  const { data, isLoading, isError, isFetching } = useQuery({
-    queryKey: "posts",
-    queryFn: () => useFetch(),
-  });
-
-  //insets for safe area
-  const insets = useSafeAreaInsets();
-
+export default function SwiperComponent(props: { data: any; title: string }) {
+  //destructuring
+  const { data: items, isLoading, isFetching } = props.data;
   return (
     <Box h={300} w={"full"}>
       <HStack alignItems={"center"} justifyContent={"space-between"} px={2}>
-        <Heading>Educação</Heading>
+        <Heading>{props.title}</Heading>
 
         <Link color={"red.500"} tintColor={"red.600"}>
           veja mais
@@ -34,7 +23,7 @@ export default function SwiperComponent() {
         {isLoading || isFetching ? (
           <Heading>Loading</Heading>
         ) : (
-          data
+          items
             .filter((item: any, index: number) => index < 10)
             .map((item: any) => <SwiperItem key={item.id} item={item} />)
         )}
@@ -43,6 +32,8 @@ export default function SwiperComponent() {
   );
 }
 
+
+//Swiper item component
 const SwiperItem = (props: { item: any }) => {
   return (
     <Box p={2}>
