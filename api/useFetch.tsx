@@ -5,10 +5,10 @@
 
 import axios from "axios";
 
-const useFetch = async () => {
+const useFetch = async (url: string) => {
   const response = await axios({
     method: "GET",
-    url: "https://picsum.photos/v2/list",
+    url: url,
   });
 
   return response.data;
