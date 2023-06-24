@@ -23,7 +23,7 @@ export default function () {
         pb={20}
         borderBottomRadius={20}
       >
-        <Heading textAlign={"center"} color={"white"}>
+        <Heading color={"white"} alignItems={"center"}>
           Juntos por uma comunidade segura de violencia
         </Heading>
       </HStack>
