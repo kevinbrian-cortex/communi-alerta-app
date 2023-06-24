@@ -1,14 +1,17 @@
 import { Ionicons } from "@expo/vector-icons";
-import { Tabs } from "expo-router";
+import { Tabs, useRouter } from "expo-router";
 import { Center, Icon, IconButton } from "native-base";
 import Appbar from "../../components/appbar";
 
 const customTabButton = (props: any) => {
+  //router
+  const router = useRouter();
+
   return (
     <Center bottom={5}>
       <IconButton
         onPress={() => {
-          console.log("Alert");
+          router.push("/alert");
         }}
         alignContent={"center"}
         alignItems={"center"}
@@ -40,10 +43,10 @@ const tabArr = [
   {
     route: "alert",
     options: {
-      header: () => <Appbar />,
       tabBarIcon: () => null,
       tabBarLabel: () => null,
       tabBarButton: customTabButton,
+      presentation: "containedModal",
     },
   },
   {
