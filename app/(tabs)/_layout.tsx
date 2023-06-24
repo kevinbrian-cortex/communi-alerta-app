@@ -7,13 +7,16 @@ const customTabButton = (props: any) => {
   return (
     <Center bottom={5}>
       <IconButton
+        onPress={() => {
+          console.log("Alert");
+        }}
         alignContent={"center"}
         alignItems={"center"}
         justifyContent={"center"}
         borderRadius={"full"}
         _icon={{
-          color: "white",
-          bgColor: "red.500",
+          color: "red.500",
+          bgColor: "white",
           borderRadius: "full",
         }}
         icon={

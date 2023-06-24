@@ -5,7 +5,7 @@ import React from "react";
 const cardData = [
   {
     id: 1,
-    title: "Enviar uma alerta",
+    title: "Enviar um alerta",
     icon_name: "notifications",
     color: "red.500",
   },
