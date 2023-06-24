@@ -2,10 +2,12 @@ import { Ionicons } from "@expo/vector-icons";
 import {
   Box,
   Center,
+  Flex,
   HStack,
   Icon,
   IconButton,
   ScrollView,
+  Spacer,
   Text,
   VStack,
 } from "native-base";
@@ -26,7 +28,7 @@ const cardData = [
   },
   {
     id: 3,
-    title: "Linha para verde",
+    title: "Ligue para linha verde",
     icon_name: "call",
     color: "green.400",
   },
@@ -35,13 +37,11 @@ const cardData = [
 const MenuCards = () => {
   return (
     <Center w={"full"} bottom={10} bgColor={"transparent"}>
-      <ScrollView>
-        <HStack justifyContent={"center"} space={2}>
-          {cardData.map((item) => (
-            <CartItem key={item.id} {...item} />
-          ))}
-        </HStack>
-      </ScrollView>
+      <Flex justifyContent={"center"} direction="row">
+        {cardData.map((item) => (
+          <CartItem key={item.id} {...item} />
+        ))}
+      </Flex>
     </Center>
   );
 };
@@ -54,36 +54,38 @@ const CartItem = (props: {
   color: string;
 }) => {
   return (
-    <Box
-      borderWidth={1}
-      borderColor={"gray.200"}
-      borderRadius={10}
-      bgColor={"white"}
-      py={2}
-    >
-      <VStack justifyContent={"space-between"} space={2} alignItems={"center"}>
-        <IconButton
-          icon={
-            <Icon
-              as={Ionicons}
-              name={props.icon_name}
-              size="2xl"
-              color={props.color}
-            />
-          }
-        />
-        <Text
-          isTruncated
-          maxW="200"
-          w="80%"
-          textAlign={"center"}
-          fontSize={"md"}
-          noOfLines={2}
-          // bold={true}
+    <>
+      <Box
+        borderWidth={1}
+        borderColor={"gray.200"}
+        borderRadius={10}
+        bgColor={"white"}
+        p={2}
+        py={4}
+        m={0.5}
+      >
+        <VStack
+          justifyContent={"space-between"}
+          space={2}
+          alignItems={"center"}
         >
-          {props.title}
-        </Text>
-      </VStack>
-    </Box>
+          <IconButton
+            icon={
+              <Icon
+                as={Ionicons}
+                name={props.icon_name}
+                size="2xl"
+                color={props.color}
+              />
+            }
+          />
+          <Text isTruncated textAlign={"center"} noOfLines={2}>
+            {props.title}
+          </Text>
+        </VStack>
+      </Box>
+
+      {/* <Spacer /> */}
+    </>
   );
 };
