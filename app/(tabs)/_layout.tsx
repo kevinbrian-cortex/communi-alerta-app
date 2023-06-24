@@ -1,7 +1,7 @@
-import { Tabs } from "expo-router";
-import Appbar from "../../components/appbar";
-import { Box, Center, Icon, IconButton, Text, View } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
+import { Center, Icon, IconButton } from "native-base";
+import Appbar from "../../components/appbar";
 
 const customTabButton = (props: any) => {
   return (
