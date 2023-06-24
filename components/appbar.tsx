@@ -6,10 +6,11 @@ const Appbar = () => {
     <HStack
       bg="blue.500"
       justifyContent="space-between"
-      alignItems="center"
+      justifyItems={"center"}
       w="full"
+      pt={12}
     >
-      <HStack p={3}>
+      <HStack p={2} alignItems="center">
         <Box p={1} bg={"white"} borderRadius={50}>
           <Image
             source={require("../assets/images/logo.png")}

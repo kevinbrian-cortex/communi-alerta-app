@@ -1,5 +1,5 @@
+import { Stack } from "expo-router";
 import { NativeBaseProvider } from "native-base";
-import { Slot } from "expo-router";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 export default function RootLayout() {
@@ -9,7 +9,9 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <NativeBaseProvider>
-        <Slot />
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
       </NativeBaseProvider>
     </QueryClientProvider>
   );
