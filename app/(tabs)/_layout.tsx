@@ -2,6 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Tabs, useRouter } from "expo-router";
 import { Center, Icon, IconButton } from "native-base";
 import Appbar from "../../components/appbar";
+import HeaderBar from "../../components/nearby/headerBar";
 
 const customTabButton = (props: any) => {
   //router
@@ -43,6 +44,7 @@ const tabArr = [
   {
     route: "alert",
     options: {
+      header: () => <HeaderBar />,
       tabBarIcon: () => null,
       tabBarLabel: () => null,
       tabBarButton: customTabButton,

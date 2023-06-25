@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import {
   Box,
   Center,
@@ -12,22 +13,26 @@ import {
   VStack,
 } from "native-base";
 import React from "react";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const cardData = [
   {
     id: 1,
+    route: "alert",
     title: "Enviar um alerta",
     icon_name: "notifications",
     color: "red.500",
   },
   {
     id: 2,
+    route: "help",
     title: "Ajudar o proximo",
     icon_name: "ios-hand-left",
     color: "blue.400",
   },
   {
     id: 3,
+    route: "call",
     title: "Ligue para linha verde",
     icon_name: "call",
     color: "green.400",
@@ -52,9 +57,15 @@ const CartItem = (props: {
   icon_name: string;
   title: string;
   color: string;
+  route: string;
 }) => {
+  const router = useRouter();
+
   return (
-    <>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() => router.push(props.route)}
+    >
       <Box
         borderWidth={1}
         borderColor={"gray.200"}
@@ -86,6 +97,6 @@ const CartItem = (props: {
       </Box>
 
       {/* <Spacer /> */}
-    </>
+    </TouchableOpacity>
   );
 };
