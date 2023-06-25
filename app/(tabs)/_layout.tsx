@@ -1,19 +1,26 @@
-import { Tabs } from "expo-router";
-import Appbar from "../../components/appbar";
-import { Box, Center, Icon, IconButton, Text, View } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
+import { Tabs, useRouter } from "expo-router";
+import { Center, Icon, IconButton } from "native-base";
+import Appbar from "../../components/appbar";
+import HeaderBar from "../../components/nearby/headerBar";
 
 const customTabButton = (props: any) => {
+  //router
+  const router = useRouter();
+
   return (
     <Center bottom={5}>
       <IconButton
+        onPress={() => {
+          router.push("/alert");
+        }}
         alignContent={"center"}
         alignItems={"center"}
         justifyContent={"center"}
         borderRadius={"full"}
         _icon={{
-          color: "white",
-          bgColor: "red.500",
+          color: "red.500",
+          bgColor: "white",
           borderRadius: "full",
         }}
         icon={
@@ -37,10 +44,11 @@ const tabArr = [
   {
     route: "alert",
     options: {
-      header: () => <Appbar />,
+      header: () => <HeaderBar />,
       tabBarIcon: () => null,
       tabBarLabel: () => null,
       tabBarButton: customTabButton,
+      presentation: "containedModal",
     },
   },
   {
